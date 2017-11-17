@@ -66,6 +66,7 @@ gcc -std=c99 -D_POSIX_C_SOURCE=200112L -Wall -Wextra -O2 -o print2 print2.c
 
 ```bash
 gcc -std=c99 -D_DEFAULT_SOURCE -Wall -Wextra -O2 -o yepstat yepstat.c
+gcc -std=c99 -D_DEFAULT_SOURCE -Wall -Wextra -O2 -o print2 print2.c
 ```
 
 ---
