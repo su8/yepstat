@@ -43,7 +43,7 @@ user    0m0.002s
 sys     0m0.002s
 
 # the shell alone
-# echo -en "\0337\033[1;1H\033[K" open and read /tmp/yepstat "\0338"
+# echo -en "\0337\033[1;1H\033[K" YOUR DATA "\0338"
 real    0m0.003s
 user    0m0.001s
 sys     0m0.002s
@@ -73,7 +73,7 @@ gcc -std=c99 -D_DEFAULT_SOURCE -Wall -Wextra -O2 -o yepstat yepstat.c
 
 Changing colours, font type, boldness and so on happens by using ANSI escape codes [1] , [2] , [3] and [4]
 
-We use tmpfs (your RAM), so even when your drive is under heavy write and read I/O the program to remain lightning fast.
+I do advice you to use the print2 program that comes with yepstat.
 
 ```bash
 # The updating process
