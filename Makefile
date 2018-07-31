@@ -28,10 +28,12 @@ install:
 	install -D -s -m 755 yepstat $(BIN_DIR)/yepstat
 	install -D -s -m 755 print2 $(BIN_DIR)/print2
 
-clean:
+uninstall:
 	rm -f $(BIN_DIR)/yepstat
 	rm -f $(BIN_DIR)/print2
+
+clean:
 	rm -f yepstat
 	rm -f print2
 
-.PHONY: all install clean
+.PHONY: all install clean uninstall
