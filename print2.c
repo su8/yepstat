@@ -23,15 +23,18 @@
 int main(int argc, char *argv[]) {
   char *str = NULL, buf[1000];
   char *ptr = buf;
-  int x = 1;
+  int x = 1, z = 0;
 
   if (1 == argc) {
     return EXIT_FAILURE;
   }
 
-  for (; x < argc; x++) {
-    for (str = argv[x]; *str; str++) { // the '\e' sequence
-      if ('\\' == *str && ('e' == *(str+1))) {
+  for (; x < argc; x++, z++) {
+    for (str = argv[x]; *str; str++, z++) {
+      if (998 < z) {
+        goto out;
+      }
+      if ('\\' == *str && ('e' == *(str+1))) { // the '\e' sequence
         *ptr++ = '\x1B';
         str++;
         continue;
@@ -40,6 +43,8 @@ int main(int argc, char *argv[]) {
     }
     *ptr++ = ' ';
   }
+
+out:
   *(--ptr) = '\0';
 
   if (!puts(buf)) {
