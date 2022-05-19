@@ -77,6 +77,8 @@ while true; do echo '\e[101;96mlight cyan fg on light red bg\e[0m'; done | ./yep
 while true; do print2 '\e[101;96mlight cyan fg on light red bg\e[0m'; done | ./yepstat &
 ```
 
+You can have it auto start in your .bashrc or .zshrc
+Just dont forget & at end.
 ---
 
 # Requirements
