@@ -49,20 +49,18 @@ check_n_update(void) {
 
 static inline void 
 update_line(const char *buf) {
-  static char x = 0, z = 0, newbuf[1000] = "Hello World";
+  static char x = 0, newbuf[1000] = "Hello World";
   static const char str1[] = "\0337\033[1;1H\033[K";
   static const char str2[] = "\0338";
   static char *const first_end = newbuf + STRZIZE(str1)-1;
-
-  static size_t len1 = STRZIZE(str1)-1, len2 = STRZIZE(str2);
   size_t buflen = strlen(buf);
 
-  if (z == x) {
-    memcpy(newbuf, str1, len1);
+  if (0 == x) {
+    memcpy(newbuf, str1, STRZIZE(str1)-1);
     x = 1;
   }
   memcpy(first_end, buf, buflen);
-  memcpy(first_end + buflen, str2, len2);
+  memcpy(first_end + buflen, str2, STRZIZE(str2);
 
   fputs(newbuf, stdout);
   if (0 != (fflush(stdout))) {
