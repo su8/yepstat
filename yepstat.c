@@ -27,7 +27,7 @@ static inline void update_line(const char *);
 static inline void check_n_update(void);
 
 int main(void) {
-  struct timespec tc = { 0, 500L * 1000000L };
+  struct timespec tc = { 0L, 500L * 1000000L };
 
   while (1) {
     check_n_update();
@@ -50,17 +50,17 @@ check_n_update(void) {
 static inline void 
 update_line(const char *buf) {
   static char x = 0, newbuf[1000] = "Hello World";
-  static const char str1[] = "\0337\033[1;1H\033[K";
-  static const char str2[] = "\0338";
-  static char *const first_end = newbuf + STRZIZE(str1)-1;
+  static const char cursor[] = "\0337\033[1;1H\033[K";
+  static const char second_end[] = "\0338";
+  static char *const first_end = newbuf + STRZIZE(cursor)-1;
   size_t buflen = strlen(buf);
 
   if (0 == x) {
-    memcpy(newbuf, str1, STRZIZE(str1)-1);
+    memcpy(newbuf, cursor, STRZIZE(cursor)-1);
     x = 1;
   }
   memcpy(first_end, buf, buflen);
-  memcpy(first_end + buflen, str2, STRZIZE(str2);
+  memcpy(first_end + buflen, second_end, STRZIZE(second_end));
 
   fputs(newbuf, stdout);
   if (0 != (fflush(stdout))) {
