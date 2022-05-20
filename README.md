@@ -1,4 +1,6 @@
-Notice the first grey CPU 0% 0% 0% line
+ [![C/C++ CI](https://github.com/su8/yepstat/actions/workflows/c-cpp.yml/badge.svg?branch=master)](https://github.com/su8/yepstat/actions/workflows/c-cpp.yml)
+
+ Notice the first grey CPU 0% 0% 0% line
 
 ![](1.png)
 
