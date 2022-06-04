@@ -49,7 +49,7 @@ check_n_update(void) {
 
 static inline void 
 update_line(const char *buf) {
-  static char x = 0, newbuf[1000] = "Hello World";
+  static char x = 0, newbuf[1030] = "Hello World";
   static const char cursor[] = "\0337\033[1;1H\033[K";
   static const char second_end[] = "\0338";
   static char *const first_end = newbuf + STRZIZE(cursor)-1;
